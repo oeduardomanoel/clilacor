@@ -45,7 +45,6 @@ Em aberto:
 
 - Se consultas cardiológicas entram na lista de serviços. A resposta sobre serviços citou só checkup e exames, mas o diferencial "tudo em um lugar" foi descrito como consulta e exames no mesmo endereço.
 - Tempo de experiência do médico responsável.
-- RQE do médico responsável.
 - Horário exato de atendimento. Confirmado apenas: turnos da manhã e da tarde, sem atendimento 24 horas.
 - Lista completa de convênios.
 - Domínio e hospedagem.
@@ -55,7 +54,7 @@ Em aberto:
 - Localização: Rua Presidente Coutinho, 579, Sala 601, Centro, Florianópolis - SC, CEP 88015-231.
 - WhatsApp principal (agendamento): (48) 98829-0904.
 - Telefone fixo: (48) 3224-7333.
-- Responsável técnico: Dr. La Hire dos Santos Prado Filho, CRM-SC 3211.
+- Responsável técnico: Dr. La Hire dos Santos Prado Filho, CRM-SC 3211, RQE 9178.
 - Especialidade: Cardiologia.
 - Convênios citados: Unimed, Casacaresc e Fundação Celesc, entre outros. Orientar o paciente a confirmar a cobertura com a clínica ou a operadora.
 

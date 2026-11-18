@@ -11,9 +11,9 @@ Modo: Persuade. Visitante: paciente de Florianópolis que quer agendar checkup o
 
 Comp aprovado: `.impeccable/mocks/comp-2.png`.
 
-Prova disponível: responsável técnico com CRM-SC 3211, cinco serviços, endereço, telefones, convênios citados. Sem depoimentos, números, fotos reais ou RQE.
+Prova disponível: responsável técnico com CRM-SC 3211 e RQE 9178, cinco serviços, endereço, telefones, convênios citados. Sem depoimentos, números ou fotos reais.
 
-Em aberto: consultas como serviço, tempo de experiência, RQE, horário exato, lista completa de convênios.
+Em aberto: consultas como serviço, tempo de experiência, horário exato, lista completa de convênios.
 
 ## Direction contract
 
