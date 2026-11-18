@@ -1,0 +1,1309 @@
+---
+const whatsappNumber = '5548988290904';
+const defaultMessage = 'Olá! Gostaria de agendar um exame na Clilacor.';
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+
+const waLink = (message: string) =>
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+const exams = [
+  {
+    id: 'checkup',
+    label: ['Checkup', 'cardiovascular'],
+    title: 'Checkup cardiovascular',
+    name: 'um checkup cardiovascular',
+    description: 'Avaliação da saúde do seu coração.',
+  },
+  {
+    id: 'ecg',
+    label: ['Eletrocardiograma', '(ECG)'],
+    title: 'Eletrocardiograma (ECG)',
+    name: 'um eletrocardiograma (ECG)',
+    description: 'Registra a atividade elétrica do coração.',
+  },
+  {
+    id: 'eco',
+    label: ['Ecocardiograma', '(ECO)'],
+    title: 'Ecocardiograma (ECO)',
+    name: 'um ecocardiograma (ECO)',
+    description: 'Ultrassom que mostra a estrutura e o funcionamento do coração.',
+  },
+  {
+    id: 'holter',
+    label: ['Holter'],
+    title: 'Holter',
+    name: 'um Holter',
+    description: 'Aparelho portátil que registra o ritmo do coração durante a sua rotina.',
+  },
+  {
+    id: 'mapa',
+    label: ['MAPA'],
+    title: 'MAPA',
+    name: 'um MAPA',
+    description: 'Monitoramento da pressão arterial ao longo do dia e da noite.',
+  },
+];
+
+const plans = ['Unimed', 'Casacaresc', 'Fundação Celesc'];
+const mapsHref =
+  'https://www.google.com/maps/search/?api=1&query=' +
+  encodeURIComponent('Rua Presidente Coutinho, 579, Centro, Florianópolis - SC, 88015-231');
+
+const periods = [
+  { id: 'manha', label: 'Manhã', name: 'pela manhã' },
+  { id: 'tarde', label: 'Tarde', name: 'à tarde' },
+];
+
+const navLinks = [
+  { href: '#exames', label: 'Exames' },
+  { href: '#medico', label: 'Médico', extra: ' responsável' },
+  { href: '#convenios', label: 'Convênios' },
+  { href: '#como-chegar', label: 'Como chegar' },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clilacor | Checkup e exames do coração em Florianópolis</title>
+    <meta
+      name="description"
+      content="Checkup cardiovascular, eletrocardiograma, ecocardiograma, Holter e MAPA no Centro de Florianópolis. Agende pelo WhatsApp (48) 98829-0904."
+    />
+    <meta name="theme-color" content="#53090a" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="preload" href="/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <header class="hero">
+      <a class="logo" href="/" aria-label="Clilacor, página inicial">
+        <picture><source type="image/webp" srcset="/img/logo.webp" /><img src="/assets/plates/logo.png" alt="Clilacor, Clínica e Laboratório do Coração" width="1024" height="1012" /></picture>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          {navLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}{link.extra && <span class="nav-extra">{link.extra}</span>}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <picture class="heart-frame"><source type="image/webp" srcset="/img/heart-640.webp 640w, /img/heart.webp 1024w" sizes="(max-width: 1299px) 92vw, 44vw" /><img class="heart" src="/assets/plates/heart.png" alt="" width="1024" height="1536" fetchpriority="high" /></picture>
+
+      <div class="intro">
+        <h1>Checkup e exames<br />do coração em um<br />só lugar.</h1>
+        <p>Em Florianópolis, sob a responsabilidade do <br />Dr. La Hire dos Santos Prado Filho, CRM-SC <span class="num">3211</span>.</p>
+      </div>
+
+      <form class="booking" id="agendar" data-number={whatsappNumber}>
+        <p class="booking-q" id="booking-q">Qual exame você precisa?</p>
+
+        <div class="options options-exam" role="radiogroup" aria-labelledby="booking-q">
+          {exams.map((exam) => (
+            <label class="option">
+              <input type="radio" name="exame" value={exam.name} />
+              <span class="pin" aria-hidden="true"></span>
+              <span class="option-text">{exam.label.map((line) => <span>{line}</span>)}</span>
+            </label>
+          ))}
+        </div>
+
+        <div class="options options-period" role="radiogroup" aria-label="Período">
+          {periods.map((period) => (
+            <label class="option">
+              <input type="radio" name="periodo" value={period.name} />
+              <span class="pin" aria-hidden="true"></span>
+              <span class="option-text"><span>{period.label}</span></span>
+            </label>
+          ))}
+        </div>
+
+        <a class="cta" id="cta" href={whatsappHref} target="_blank" rel="noopener">
+          <img class="cta-icon" src="/icons/whatsapp.svg" alt="" width="38" height="38" />
+          <span class="cta-text">
+            <span>Agendar pelo WhatsApp</span>
+            <span class="cta-number num">(48) 98829-0904</span>
+          </span>
+        </a>
+      </form>
+    </header>
+
+    <main>
+      <section class="exams" id="exames" aria-labelledby="exames-title">
+        <h2 id="exames-title">Os exames</h2>
+        <ul class="exam-list">
+          {exams.map((exam) => (
+            <li class="exam-row">
+              <h3>{exam.title}</h3>
+              <p>{exam.description}</p>
+              <a
+                class="text-link"
+                href={waLink(`Olá! Gostaria de agendar ${exam.name} na Clilacor.`)}
+                target="_blank"
+                rel="noopener"
+                aria-label={`Agendar ${exam.title} pelo WhatsApp`}
+              >
+                Agendar
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="doctor" id="medico" aria-labelledby="medico-title">
+        <div class="doctor-inner">
+          <div>
+            <h2 id="medico-title" class="doctor-name">Dr. La Hire dos Santos Prado Filho</h2>
+            <p class="doctor-text">
+              A clínica reúne checkup e exames do coração em um só endereço, sob a responsabilidade técnica de um médico de longa experiência.
+            </p>
+          </div>
+          <div class="doctor-side">
+            <p class="doctor-reg">Médico responsável pela Clilacor</p>
+            <p class="doctor-crm num">CRM-SC 3211</p>
+            <a class="text-link" href={whatsappHref} target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="plans" id="convenios" aria-labelledby="convenios-title">
+        <h2 id="convenios-title">Convênios</h2>
+        <div class="plans-body">
+          <ul class="plan-list">
+            {plans.map((plan) => <li>{plan}</li>)}
+          </ul>
+          <p>A Clilacor atende esses e outros planos de saúde. Confirme a cobertura do seu plano com a clínica ou com a operadora.</p>
+          <a
+            class="text-link"
+            href={waLink('Olá! Gostaria de confirmar se a Clilacor atende o meu convênio.')}
+            target="_blank"
+            rel="noopener"
+          >
+            Confirmar meu convênio pelo WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <section class="visit" id="como-chegar" aria-labelledby="chegar-title">
+        <h2 id="chegar-title">Como chegar</h2>
+        <div class="visit-grid">
+          <div>
+            <address>
+              Rua Presidente Coutinho, <span class="num">579</span><br />
+              Sala <span class="num">601</span>, Centro<br />
+              Florianópolis - SC
+            </address>
+            <p class="visit-cep">CEP <span class="num">88015-231</span></p>
+            <a class="text-link" href={mapsHref} target="_blank" rel="noopener">Abrir no mapa</a>
+          </div>
+          <dl class="visit-facts">
+            <div>
+              <dt>Atendimento</dt>
+              <dd>Manhã e tarde</dd>
+            </div>
+            <div>
+              <dt>WhatsApp</dt>
+              <dd><a class="num" href={whatsappHref} target="_blank" rel="noopener">(48) 98829-0904</a></dd>
+            </div>
+            <div>
+              <dt>Telefone</dt>
+              <dd><a class="num" href="tel:+554832247333">(48) 3224-7333</a></dd>
+            </div>
+          </dl>
+        </div>
+        <p class="visit-note">
+          A clínica não tem atendimento 24 horas. Em uma emergência, ligue <a class="num" href="tel:192">192</a> (SAMU).
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-name">Clilacor, Clínica e Laboratório do Coração</p>
+      <p>Responsável técnico: Dr. La Hire dos Santos Prado Filho, CRM-SC <span class="num">3211</span></p>
+    </footer>
+
+    <a class="mobile-cta" href={whatsappHref} target="_blank" rel="noopener">
+      <img src="/icons/whatsapp.svg" alt="" width="26" height="26" />
+      Agendar pelo WhatsApp
+    </a>
+
+    <script>
+      const form = document.querySelector<HTMLFormElement>('#agendar');
+      const cta = document.querySelector<HTMLAnchorElement>('#cta');
+      const mobileCta = document.querySelector<HTMLAnchorElement>('.mobile-cta');
+
+      if (cta && mobileCta) {
+        new IntersectionObserver(([entry]) => {
+          mobileCta.classList.toggle('is-hidden', entry.isIntersecting);
+        }).observe(cta);
+      }
+
+      if (form && cta) {
+        const number = form.dataset.number;
+
+        const updateLink = () => {
+          const data = new FormData(form);
+          const exam = data.get('exame');
+          const period = data.get('periodo');
+          const what = exam ? String(exam) : 'um exame';
+          const when = period ? ` ${period}` : '';
+          const message = `Olá! Gostaria de agendar ${what}${when} na Clilacor.`;
+          const href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+          cta.href = href;
+          if (mobileCta) mobileCta.href = href;
+        };
+
+        const heart = document.querySelector<HTMLImageElement>('.heart');
+        const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        const beat = () => {
+          if (!heart || calm.matches) return;
+          heart.animate(
+            [
+              { transform: 'scale(1)' },
+              { transform: 'scale(1.018)', offset: 0.16 },
+              { transform: 'scale(1)', offset: 0.34 },
+              { transform: 'scale(1.01)', offset: 0.48 },
+              { transform: 'scale(1)' },
+            ],
+            { duration: 1000, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' },
+          );
+        };
+
+        form.addEventListener('change', updateLink);
+        form.addEventListener('change', beat);
+        window.setTimeout(beat, 500);
+        form.addEventListener('submit', (event) => event.preventDefault());
+      }
+    </script>
+
+    <style is:global>
+      @font-face {
+        font-family: 'Source Serif 4';
+        src: url('/fonts/source-serif-4-latin-opsz-normal.woff2') format('woff2');
+        font-weight: 200 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --wine: #53090a;
+        --wine-deep: #38090a;
+        --thread: #f8f3ed;
+        --ribbon: #e7e0dc;
+        --indigo: #142a64;
+        --brass: #b08a3e;
+        --u: min(calc(100vw / 1536), calc(100svh / 1024));
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: var(--wine) url('/assets/plates/cloth.png') repeat;
+        background-size: 300px 85px;
+        color: var(--thread);
+        font-family: 'Source Serif 4', Georgia, serif;
+      }
+
+      ::selection {
+        background: var(--thread);
+        color: var(--wine);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--brass);
+        outline-offset: 3px;
+      }
+
+      .num {
+        font-variant-numeric: tabular-nums lining-nums;
+      }
+
+      .hero {
+        position: relative;
+        height: 100svh;
+        overflow: hidden;
+        background: var(--wine) url('/assets/plates/cloth.png') repeat;
+        background-size: calc(300 * var(--u)) calc(85 * var(--u));
+      }
+
+      .logo {
+        position: absolute;
+        z-index: 3;
+        left: calc(80 * var(--u));
+        top: calc(24 * var(--u));
+        width: calc(170 * var(--u));
+        height: calc(168 * var(--u));
+      }
+
+      .logo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .nav {
+        position: absolute;
+        z-index: 3;
+        left: calc(318 * var(--u));
+        top: calc(84 * var(--u));
+        height: calc(36 * var(--u));
+      }
+
+      .nav ul {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav li {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav li + li::before {
+        content: '';
+        width: calc(11 * var(--u));
+        height: calc(11 * var(--u));
+        margin-inline: calc(35 * var(--u));
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass) 55%, #6d5020);
+      }
+
+      .nav a {
+        color: var(--thread);
+        font-size: calc(21.4 * var(--u));
+        line-height: 1.2;
+        text-decoration: none;
+        text-underline-offset: 0.25em;
+        text-decoration-thickness: 1px;
+      }
+
+      .nav a:hover {
+        text-decoration-line: underline;
+      }
+
+      .heart {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: calc(36 * var(--u));
+        width: calc(670 * var(--u));
+        height: calc(988 * var(--u));
+        object-fit: cover;
+        object-position: left top;
+      }
+
+      .intro {
+        position: absolute;
+        z-index: 2;
+        left: calc(84 * var(--u));
+        top: calc(232 * var(--u));
+      }
+
+      .intro h1 {
+        margin: 0;
+        color: var(--thread);
+        font-size: calc(104 * var(--u));
+        font-weight: 700;
+        line-height: calc(102 * var(--u));
+        letter-spacing: -0.015em;
+      }
+
+      .intro p {
+        margin: calc(38 * var(--u)) 0 0 calc(4 * var(--u));
+        color: var(--thread);
+        font-size: calc(28.4 * var(--u));
+        line-height: calc(39 * var(--u));
+      }
+
+      .booking {
+        position: absolute;
+        z-index: 4;
+        left: 0;
+        right: 0;
+        bottom: calc(108 * var(--u));
+        display: flex;
+        align-items: center;
+        height: calc(104 * var(--u));
+        padding-inline: calc(50 * var(--u)) calc(38 * var(--u));
+        background: var(--ribbon);
+        color: var(--indigo);
+      }
+
+      .booking::before,
+      .booking::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        background-repeat: repeat-x;
+      }
+
+      .booking::before {
+        top: calc(-44 * var(--u));
+        height: calc(46 * var(--u));
+        background-image: url('/assets/plates/lace-edge-top.png');
+        background-size: calc(930 * var(--u)) calc(46 * var(--u));
+      }
+
+      .booking::after {
+        bottom: calc(-62 * var(--u));
+        height: calc(64 * var(--u));
+        background-image: url('/assets/plates/lace-edge-bottom.png');
+        background-size: calc(1536 * var(--u)) calc(64 * var(--u));
+      }
+
+      .booking-q {
+        flex: none;
+        width: calc(297 * var(--u));
+        margin: 0;
+        font-size: calc(24.8 * var(--u));
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+
+      .options {
+        display: flex;
+        align-items: flex-start;
+        flex: none;
+        height: calc(64 * var(--u));
+        padding-left: calc(19 * var(--u));
+        border-left: 1px solid rgb(20 42 100 / 55%);
+      }
+
+      .options-exam .option:nth-child(1) { width: calc(108 * var(--u)); }
+      .options-exam .option:nth-child(2) { width: calc(134 * var(--u)); margin-left: calc(24 * var(--u)); }
+      .options-exam .option:nth-child(3) { width: calc(118 * var(--u)); margin-left: calc(26 * var(--u)); }
+      .options-exam .option:nth-child(4) { width: calc(56 * var(--u)); margin-left: calc(30 * var(--u)); padding-top: calc(3 * var(--u)); }
+      .options-exam .option:nth-child(5) { width: calc(54 * var(--u)); margin-left: calc(31 * var(--u)); padding-top: calc(3 * var(--u)); }
+
+      .options-period {
+        gap: calc(44 * var(--u));
+        margin-left: calc(26 * var(--u));
+        padding-left: calc(28 * var(--u));
+      }
+
+      .options-period .option { padding-top: calc(6 * var(--u)); }
+      .options-period .option:nth-child(1) { width: calc(60 * var(--u)); }
+      .options-period .option:nth-child(2) { width: calc(56 * var(--u)); }
+
+      .option {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc(9 * var(--u));
+        color: var(--indigo);
+        font-size: calc(15.8 * var(--u));
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .option input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .pin {
+        width: calc(11 * var(--u));
+        height: calc(11 * var(--u));
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass) 55%, #6d5020);
+        transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease-out;
+      }
+
+      .option-text {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        text-decoration-color: transparent;
+      }
+
+      .option:hover .pin {
+        transform: scale(1.25);
+      }
+
+      .option:has(input:checked) .pin {
+        transform: scale(1.35);
+        box-shadow: 0 0 0 calc(3 * var(--u)) var(--indigo);
+      }
+
+      .option:has(input:checked) .option-text {
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-color: var(--indigo);
+        text-underline-offset: 0.2em;
+      }
+
+      .option:has(input:focus-visible) {
+        outline: 2px solid var(--indigo);
+        outline-offset: 4px;
+      }
+
+      .cta {
+        display: flex;
+        align-items: center;
+        flex: none;
+        gap: calc(17 * var(--u));
+        width: calc(288 * var(--u));
+        height: calc(66 * var(--u));
+        margin-left: auto;
+        padding-inline: calc(33 * var(--u)) calc(14 * var(--u));
+        border-radius: calc(33 * var(--u));
+        background: var(--indigo);
+        color: #f3eee9;
+        text-decoration: none;
+        transition: background-color 180ms ease-out;
+      }
+
+      .cta:hover {
+        background: #0d1d4a;
+      }
+
+      .cta-icon {
+        flex: none;
+        width: calc(38 * var(--u));
+        height: calc(38 * var(--u));
+      }
+
+      .cta-text {
+        display: flex;
+        flex-direction: column;
+        font-size: calc(16.2 * var(--u));
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .cta-number {
+        font-size: calc(21.2 * var(--u));
+      }
+
+      main {
+        --gutter: clamp(20px, 5.5vw, 84px);
+        --lace: clamp(30px, 3vw, 46px);
+        display: block;
+      }
+
+      main h2 {
+        margin: 0;
+        font-size: clamp(2.75rem, 5.6vw, 5.5rem);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.015em;
+        text-wrap: balance;
+      }
+
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        color: inherit;
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.3em;
+        transition: text-underline-offset 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .text-link:hover {
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.45em;
+      }
+
+      .exams {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+        gap: clamp(32px, 5vw, 80px);
+        padding: clamp(88px, 11vw, 168px) var(--gutter) clamp(96px, 12vw, 184px);
+      }
+
+      .exams h2 {
+        position: sticky;
+        top: 48px;
+        align-self: start;
+      }
+
+      .exam-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .exam-row {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) auto;
+        align-items: baseline;
+        gap: 12px clamp(20px, 3vw, 44px);
+        padding-block: clamp(24px, 2.6vw, 38px);
+        border-top: 1px solid rgb(248 243 237 / 38%);
+      }
+
+      .exam-row:last-child {
+        border-bottom: 1px solid rgb(248 243 237 / 38%);
+      }
+
+      .exam-row::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 0;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass) 55%, #6d5020);
+      }
+
+      .exam-row h3 {
+        margin: 0;
+        font-size: clamp(1.5rem, 2.2vw, 2.125rem);
+        font-weight: 650;
+        line-height: 1.15;
+      }
+
+      .exam-row p {
+        margin: 0;
+        font-size: 1.1875rem;
+        line-height: 1.5;
+      }
+
+      .doctor {
+        position: relative;
+        margin-block: var(--lace);
+        background: var(--ribbon);
+        color: var(--indigo);
+      }
+
+      .doctor::before,
+      .doctor::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        background-repeat: repeat-x;
+      }
+
+      .doctor::before {
+        bottom: calc(100% - 2px);
+        height: var(--lace);
+        background-image: url('/assets/plates/lace-edge-top.png');
+        background-size: calc(var(--lace) * 20.217) var(--lace);
+      }
+
+      .doctor::after {
+        top: calc(100% - 2px);
+        height: calc(var(--lace) * 1.39);
+        background-image: url('/assets/plates/lace-edge-bottom.png');
+        background-size: calc(var(--lace) * 33.39) calc(var(--lace) * 1.39);
+      }
+
+      .doctor-inner {
+        padding: clamp(72px, 9vw, 136px) var(--gutter);
+      }
+
+      .doctor h2 {
+        font-size: clamp(1.375rem, 2vw, 1.875rem);
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+
+      .doctor-name {
+        max-width: 16ch;
+        margin: 0.35em 0 0;
+        font-size: clamp(3rem, 7.2vw, 6rem);
+        font-weight: 700;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+      }
+
+      .doctor-reg {
+        margin: 1.4em 0 0;
+        font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+        font-weight: 600;
+      }
+
+      .doctor-text {
+        max-width: 62ch;
+        margin: 0.8em 0 0;
+        font-size: 1.1875rem;
+        line-height: 1.6;
+      }
+
+      .plans {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+        gap: clamp(32px, 5vw, 80px);
+        padding: clamp(136px, 15vw, 232px) var(--gutter) clamp(96px, 12vw, 176px);
+      }
+
+      .plan-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: clamp(2.25rem, 4.6vw, 4.25rem);
+        font-weight: 600;
+        line-height: 1.16;
+        letter-spacing: -0.01em;
+      }
+
+      .plans-body p {
+        max-width: 58ch;
+        margin: 1.75em 0 0.75em;
+        font-size: 1.1875rem;
+        line-height: 1.6;
+      }
+
+      .visit {
+        padding: clamp(80px, 10vw, 152px) var(--gutter) clamp(56px, 6vw, 88px);
+        background: var(--indigo);
+      }
+
+      .visit-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+        gap: clamp(40px, 6vw, 96px);
+        margin-top: clamp(40px, 5vw, 72px);
+      }
+
+      .visit address {
+        font-size: clamp(1.5rem, 3.4vw, 3.125rem);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.18;
+      }
+
+      .visit-cep {
+        margin: 1em 0 0.5em;
+        font-size: 1.1875rem;
+      }
+
+      .visit-facts {
+        display: grid;
+        align-content: start;
+        gap: 28px;
+        margin: 0;
+      }
+
+      .visit-facts dt {
+        font-size: 1.0625rem;
+        color: #d9dcea;
+      }
+
+      .visit-facts dd {
+        margin: 0.15em 0 0;
+        font-size: clamp(1.5rem, 2.2vw, 2rem);
+        font-weight: 600;
+      }
+
+      .visit a {
+        color: var(--thread);
+      }
+
+      .visit-facts a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+      }
+
+      .visit-note {
+        max-width: 62ch;
+        margin: clamp(56px, 7vw, 96px) 0 0;
+        padding-top: 24px;
+        border-top: 1px solid rgb(248 243 237 / 38%);
+        font-size: 1.125rem;
+        line-height: 1.5;
+      }
+
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 40px;
+        padding: 32px clamp(20px, 5.5vw, 84px);
+        background: var(--wine-deep);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      .footer-name {
+        font-weight: 600;
+      }
+
+      .heart-frame {
+        display: contents;
+      }
+
+      .logo picture {
+        display: contents;
+      }
+
+      .booking {
+        --u: max(min(calc(100vw / 1536), calc(100svh / 1024)), 0.84px);
+      }
+
+      .hero {
+        min-height: 640px;
+      }
+
+      section[id] {
+        scroll-margin-top: 16px;
+      }
+
+      .booking :focus-visible,
+      .doctor :focus-visible {
+        outline-color: var(--indigo);
+      }
+
+      .booking .pin {
+        box-shadow: 0 0 0 1px #5c4318;
+      }
+
+      .exams {
+        position: relative;
+      }
+
+      .exams::before,
+      .visit::before,
+      .footer::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        background-repeat: repeat-x;
+      }
+
+      .exams::before {
+        top: 0;
+        height: 42px;
+        background-image: url('/assets/plates/lace-edge-bottom.png');
+        background-size: 1008px 42px;
+      }
+
+      .visit,
+      .footer {
+        position: relative;
+      }
+
+      .visit::before,
+      .footer::before {
+        bottom: calc(100% - 2px);
+        height: 30px;
+        background-image: url('/assets/plates/lace-edge-top.png');
+        background-size: 606px 30px;
+      }
+
+      .doctor-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+        align-items: end;
+        gap: 40px clamp(32px, 5vw, 80px);
+      }
+
+      .doctor .doctor-name {
+        max-width: 16ch;
+        margin: 0;
+        font-size: clamp(3rem, 7.2vw, 6rem);
+        font-weight: 700;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+      }
+
+      .doctor-text {
+        margin-top: 1.4em;
+      }
+
+      .doctor-side .doctor-reg {
+        margin: 0;
+        font-size: 1.1875rem;
+      }
+
+      .doctor-crm {
+        margin: 0.15em 0 0.5em;
+        font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+        font-weight: 700;
+      }
+
+      .plan-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+      }
+
+      .plan-list li::before {
+        content: '';
+        flex: none;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass) 55%, #6d5020);
+      }
+
+      .mobile-cta {
+        display: none;
+      }
+
+      @media (min-width: 1300px) and (orientation: landscape) {
+        main h2 {
+          font-size: min(5.5rem, calc(84 * var(--u)));
+        }
+
+        .doctor .doctor-name {
+          font-size: min(6rem, calc(92 * var(--u)));
+        }
+      }
+
+      @media (min-width: 1300px) and (max-width: 1535px), (min-width: 1536px) and (max-height: 1023px) {
+        .nav a {
+          font-size: max(15px, calc(21.4 * var(--u)));
+        }
+
+        .booking {
+          justify-content: space-between;
+          padding-inline: 24px;
+        }
+
+        .booking-q {
+          width: auto;
+          font-size: 20px;
+        }
+
+        .options {
+          height: auto;
+          min-height: 56px;
+        }
+
+        .options-exam {
+          gap: 18px;
+        }
+
+        .options-exam .option:nth-child(n),
+        .options-period .option:nth-child(n) {
+          width: auto;
+          margin-left: 0;
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: 0;
+        }
+
+        .options-period {
+          gap: 22px;
+          margin-left: 0;
+          padding-left: 18px;
+        }
+
+        .cta {
+          gap: 12px;
+          width: auto;
+          margin-left: 0;
+          padding-inline: 20px 26px;
+        }
+
+        .cta-text {
+          font-size: 15px;
+        }
+
+        .cta-number {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 1299px), (orientation: portrait) {
+        .exams::before {
+          display: none;
+        }
+
+        .hero {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          min-height: 0;
+          padding-top: 16px;
+          background-size: 300px 85px;
+        }
+
+        .logo,
+        .nav,
+        .intro,
+        .heart,
+        .booking {
+          position: relative;
+          inset: auto;
+        }
+
+        .logo {
+          order: 1;
+          width: 104px;
+          height: 103px;
+          margin-left: clamp(20px, 5.5vw, 84px);
+        }
+
+        .nav {
+          order: 2;
+          height: auto;
+          margin: 12px clamp(20px, 5.5vw, 84px) 0;
+        }
+
+        .nav ul {
+          flex-wrap: wrap;
+          gap: 0 22px;
+        }
+
+        .nav li + li::before {
+          display: none;
+        }
+
+        .nav a {
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          font-size: 1.0625rem;
+        }
+
+        .intro {
+          order: 3;
+          z-index: 2;
+          margin: 28px clamp(20px, 5.5vw, 84px) 0;
+        }
+
+        .intro h1 {
+          font-size: clamp(2.625rem, 11.2vw, 5.5rem);
+          line-height: 1.02;
+        }
+
+        .intro p {
+          margin: 20px 0 0;
+          font-size: 1.1875rem;
+          line-height: 1.45;
+        }
+
+        .intro p br {
+          display: none;
+        }
+
+        .heart {
+          order: 4;
+          align-self: flex-end;
+          width: min(94vw, 620px);
+          height: min(68vw, 640px);
+          margin: 12px -14vw -40px 0;
+          object-position: left top;
+        }
+
+        .booking {
+          --lace: 30px;
+          order: 5;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 22px;
+          height: auto;
+          margin-block: 0 42px;
+          padding: 32px clamp(20px, 5.5vw, 84px) 36px;
+        }
+
+        .booking::before {
+          top: -28px;
+          height: var(--lace);
+          background-size: calc(var(--lace) * 20.217) var(--lace);
+        }
+
+        .booking::after {
+          bottom: -40px;
+          height: 42px;
+          background-size: 1008px 42px;
+        }
+
+        .booking-q {
+          width: auto;
+          font-size: 1.625rem;
+          white-space: normal;
+        }
+
+        .options,
+        .options-period {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+          gap: 2px 20px;
+          height: auto;
+          margin-left: 0;
+          padding-left: 0;
+          border-left: 0;
+        }
+
+        .options-period {
+          grid-template-columns: 1fr 1fr;
+          padding-top: 14px;
+          border-top: 1px solid rgb(20 42 100 / 35%);
+        }
+
+        .options .option,
+        .options-exam .option:nth-child(n),
+        .options-period .option:nth-child(n) {
+          flex-direction: row;
+          gap: 12px;
+          width: auto;
+          min-height: 48px;
+          margin-left: 0;
+          padding-top: 0;
+          font-size: 1.125rem;
+          letter-spacing: 0;
+          text-align: left;
+        }
+
+        .pin {
+          flex: none;
+          width: 13px;
+          height: 13px;
+        }
+
+        .option:has(input:checked) .pin {
+          box-shadow: 0 0 0 3px var(--indigo);
+        }
+
+        .option-text {
+          flex-direction: row;
+          flex-wrap: wrap;
+          column-gap: 0.25em;
+          white-space: normal;
+        }
+
+        .cta {
+          justify-content: center;
+          gap: 14px;
+          width: 100%;
+          height: 68px;
+          margin-left: 0;
+          padding-inline: 16px;
+          border-radius: 34px;
+        }
+
+        .cta-icon {
+          width: 34px;
+          height: 34px;
+        }
+
+        .cta-text {
+          font-size: 1rem;
+        }
+
+        .cta-number {
+          font-size: 1.25rem;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .exams,
+        .plans,
+        .visit-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .exams h2 {
+          position: static;
+        }
+
+        .exam-row {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .doctor-inner {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .footer {
+          padding-bottom: calc(96px + env(safe-area-inset-bottom));
+        }
+
+        .mobile-cta {
+          position: fixed;
+          z-index: 20;
+          left: 12px;
+          right: 12px;
+          bottom: calc(12px + env(safe-area-inset-bottom));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          min-height: 56px;
+          border-radius: 28px;
+          background: var(--indigo);
+          box-shadow: 0 8px 24px rgb(20 4 6 / 45%);
+          color: #f3eee9;
+          font-size: 1.125rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: opacity 180ms ease-out, visibility 180ms;
+        }
+
+        .mobile-cta.is-hidden {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-extra {
+          display: none;
+        }
+
+        .nav ul {
+          gap: 0 14px;
+        }
+
+        .nav a {
+          font-size: 1rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </body>
+</html>

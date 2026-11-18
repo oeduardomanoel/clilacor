@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T14:11:30.802Z",
+  "title": "Design System: Clilacor",
+  "extensions": {
+    "colorMeta": {
+      "wine": {
+        "role": "primary",
+        "displayName": "Vinho de Almofada",
+        "canonical": "oklch(28.7% 0.105 26.5)",
+        "tonalRamp": [
+          "#1f0001",
+          "#4e0306",
+          "#732925",
+          "#994c45",
+          "#c16f67",
+          "#e9948a",
+          "#fac6bf",
+          "#ffe9e6"
+        ]
+      },
+      "wine-deep": {
+        "role": "primary",
+        "displayName": "Vinho de Arremate",
+        "canonical": "oklch(22.8% 0.074 24.1)",
+        "tonalRamp": [
+          "#1b0303",
+          "#441414",
+          "#673431",
+          "#8c5551",
+          "#b27873",
+          "#d99c97",
+          "#f0cac6",
+          "#fde9e7"
+        ]
+      },
+      "indigo": {
+        "role": "secondary",
+        "displayName": "Índigo de Tinta",
+        "canonical": "oklch(30.6% 0.106 265.0)",
+        "tonalRamp": [
+          "#010728",
+          "#0c2059",
+          "#28417d",
+          "#4864a3",
+          "#6987ca",
+          "#8dadf2",
+          "#c0d4fe",
+          "#e7efff"
+        ]
+      },
+      "indigo-deep": {
+        "role": "secondary",
+        "displayName": "Índigo Fechado",
+        "canonical": "oklch(24.9% 0.087 265.6)",
+        "tonalRamp": [
+          "#020823",
+          "#122350",
+          "#2f4373",
+          "#4e6498",
+          "#7088be",
+          "#94ade6",
+          "#c4d4f7",
+          "#e7efff"
+        ]
+      },
+      "brass": {
+        "role": "tertiary",
+        "displayName": "Latão",
+        "canonical": "oklch(65.5% 0.104 82.4)",
+        "tonalRamp": [
+          "#120a00",
+          "#332302",
+          "#594006",
+          "#835f02",
+          "#a88336",
+          "#cfa85c",
+          "#e8d1a7",
+          "#f9edd8"
+        ]
+      },
+      "brass-light": {
+        "role": "tertiary",
+        "displayName": "Brilho de Latão",
+        "canonical": "oklch(84.6% 0.088 86.2)",
+        "tonalRamp": [
+          "#110a00",
+          "#322400",
+          "#584100",
+          "#7c6221",
+          "#a18547",
+          "#c7aa6b",
+          "#e3d3ae",
+          "#f6eedb"
+        ]
+      },
+      "brass-shade": {
+        "role": "tertiary",
+        "displayName": "Sombra de Latão",
+        "canonical": "oklch(45.2% 0.075 77.3)",
+        "tonalRamp": [
+          "#130900",
+          "#352201",
+          "#5b3f0b",
+          "#7e6031",
+          "#a38354",
+          "#c9a878",
+          "#e5d1b5",
+          "#f7edde"
+        ]
+      },
+      "thread": {
+        "role": "neutral",
+        "displayName": "Fio Branco",
+        "canonical": "oklch(96.6% 0.010 72.7)",
+        "tonalRamp": [
+          "#0d0b08",
+          "#292621",
+          "#48443f",
+          "#6a6560",
+          "#8d8883",
+          "#b2ada7",
+          "#d6d4d0",
+          "#f0eeec"
+        ]
+      },
+      "ribbon": {
+        "role": "neutral",
+        "displayName": "Faixa de Renda",
+        "canonical": "oklch(91.1% 0.009 52.1)",
+        "tonalRamp": [
+          "#0d0a09",
+          "#2a2522",
+          "#494440",
+          "#6b6561",
+          "#8e8884",
+          "#b3aca9",
+          "#d7d3d1",
+          "#f0eeed"
+        ]
+      },
+      "thread-line": {
+        "role": "neutral",
+        "displayName": "Fio Tênue",
+        "canonical": "rgb(248 243 237 / 38%)"
+      },
+      "indigo-line": {
+        "role": "neutral",
+        "displayName": "Fio Índigo",
+        "canonical": "rgb(20 42 100 / 55%)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Título da primeira tela composta."
+      },
+      "display-stacked": {
+        "displayName": "Display empilhada",
+        "purpose": "Título da primeira tela abaixo de 1300px ou em retrato."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção."
+      },
+      "headline-name": {
+        "displayName": "Headline Name",
+        "purpose": "Nome do médico responsável."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Lista de convênios."
+      },
+      "address": {
+        "displayName": "Address",
+        "purpose": "Endereço da clínica."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nome de cada exame."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Linha do responsável na primeira tela."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descrições e parágrafos."
+      },
+      "link": {
+        "displayName": "Link",
+        "purpose": "Links de texto e barra fixa de WhatsApp."
+      },
+      "question": {
+        "displayName": "Question",
+        "purpose": "Pergunta da faixa de agendamento."
+      },
+      "option": {
+        "displayName": "Option",
+        "purpose": "Rótulos de exame e período no palco."
+      },
+      "option-stacked": {
+        "displayName": "Option empilhada",
+        "purpose": "Rótulos de exame e período empilhados."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Rodapé."
+      }
+    },
+    "shadows": [
+      {
+        "name": "barra-flutuante",
+        "value": "0 8px 24px rgb(20 4 6 / 45%)",
+        "purpose": "Separa a barra fixa de WhatsApp do conteúdo que rola por baixo."
+      },
+      {
+        "name": "contorno-alfinete",
+        "value": "0 0 0 1px #5c4318",
+        "purpose": "Filete que define o alfinete sobre a faixa clara."
+      },
+      {
+        "name": "alfinete-escolhido",
+        "value": "0 0 0 calc(3 * var(--u)) var(--indigo)",
+        "purpose": "Anel índigo da opção marcada; 3px quando empilhada."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-fio",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Escala do alfinete, sublinhado dos links e pulso do coração."
+      },
+      {
+        "name": "duration-estado",
+        "value": "180ms",
+        "purpose": "Hover, seleção e aparição da barra fixa."
+      },
+      {
+        "name": "pulso-coracao",
+        "value": "1000ms; scale 1 > 1.018 (16%) > 1 (34%) > 1.01 (48%) > 1",
+        "purpose": "Batida dupla 500ms após o carregamento e a cada mudança de exame ou período; não roda com prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compacto",
+        "value": "480px"
+      },
+      {
+        "name": "uma-coluna",
+        "value": "900px"
+      },
+      {
+        "name": "palco",
+        "value": "1300px"
+      },
+      {
+        "name": "referencia",
+        "value": "1536px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão de WhatsApp",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "Ação principal da faixa de agendamento, com ícone, verbo e número.",
+      "html": "<a class=\"ds-cta\" href=\"#\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"34\" height=\"34\" aria-hidden=\"true\"><path fill=\"#f3eee9\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg><span class=\"ds-cta-text\"><span>Agendar pelo WhatsApp</span><span class=\"ds-cta-number\">(48) 98829-0904</span></span></a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; gap: 14px; height: 68px; padding-inline: 28px 32px; border-radius: 34px; background: var(--indigo, #142a64); color: #f3eee9; text-decoration: none; font-family: 'Source Serif 4', Georgia, serif; transition: background-color 180ms ease-out; } .ds-cta:hover { background: #0d1d4a; } .ds-cta:focus-visible { outline: 2px solid var(--indigo, #142a64); outline-offset: 3px; } .ds-cta-text { display: flex; flex-direction: column; font-size: 1rem; font-weight: 600; line-height: 1.2; white-space: nowrap; } .ds-cta-number { font-size: 1.25rem; font-variant-numeric: tabular-nums lining-nums; }"
+    },
+    {
+      "name": "Barra fixa de WhatsApp",
+      "kind": "button",
+      "refersTo": "whatsapp-bar",
+      "description": "Atalho flutuante em 900px ou menos, oculto enquanto o botão principal está visível.",
+      "html": "<a class=\"ds-bar\" href=\"#\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"26\" height=\"26\" aria-hidden=\"true\"><path fill=\"#f3eee9\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\"/></svg>Agendar pelo WhatsApp</a>",
+      "css": ".ds-bar { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding-inline: 24px; border-radius: 28px; background: var(--indigo, #142a64); box-shadow: 0 8px 24px rgb(20 4 6 / 45%); color: #f3eee9; font-size: 1.125rem; font-weight: 600; text-decoration: none; font-family: 'Source Serif 4', Georgia, serif; } .ds-bar:focus-visible { outline: 2px solid var(--brass, #b08a3e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Opção com alfinete",
+      "kind": "chip",
+      "refersTo": "booking-option-stacked",
+      "description": "Rádio nativo com alfinete de latão no lugar do círculo padrão.",
+      "html": "<div class=\"ds-options\" role=\"radiogroup\" aria-label=\"Exame\"><label class=\"ds-option\"><input type=\"radio\" name=\"ds-exame\" checked /><span class=\"ds-pin\" aria-hidden=\"true\"></span><span class=\"ds-option-text\">Holter</span></label><label class=\"ds-option\"><input type=\"radio\" name=\"ds-exame\" /><span class=\"ds-pin\" aria-hidden=\"true\"></span><span class=\"ds-option-text\">MAPA</span></label></div>",
+      "css": ".ds-options { display: flex; gap: 28px; padding: 16px 24px; background: var(--ribbon, #e7e0dc); } .ds-option { position: relative; display: flex; align-items: center; gap: 12px; min-height: 48px; color: var(--indigo, #142a64); font-size: 1.125rem; font-weight: 600; line-height: 1.14; cursor: pointer; font-family: 'Source Serif 4', Georgia, serif; } .ds-option input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; } .ds-pin { flex: none; width: 13px; height: 13px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass, #b08a3e) 55%, #6d5020); box-shadow: 0 0 0 1px #5c4318; transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease-out; } .ds-option:hover .ds-pin { transform: scale(1.25); } .ds-option:has(input:checked) .ds-pin { transform: scale(1.35); box-shadow: 0 0 0 3px var(--indigo, #142a64); } .ds-option:has(input:checked) .ds-option-text { font-weight: 800; text-decoration: underline; text-underline-offset: 0.2em; } .ds-option:has(input:focus-visible) { outline: 2px solid var(--indigo, #142a64); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-pin { transition: none; } }"
+    },
+    {
+      "name": "Link de texto",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Ação secundária sublinhada que herda a tinta do campo.",
+      "html": "<div class=\"ds-link-field\"><a class=\"ds-link\" href=\"#\">Abrir no mapa</a></div>",
+      "css": ".ds-link-field { padding: 16px 24px; background: var(--wine, #53090a); color: var(--thread, #f8f3ed); } .ds-link { display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-size: 1.125rem; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.3em; font-family: 'Source Serif 4', Georgia, serif; transition: text-underline-offset 180ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-link:hover { text-decoration-thickness: 2px; text-underline-offset: 0.45em; } .ds-link:focus-visible { outline: 2px solid var(--brass, #b08a3e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navegação com alfinetes",
+      "kind": "nav",
+      "refersTo": "brass-pin",
+      "description": "Links em fio branco separados por alfinetes na primeira tela composta.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Exemplo\"><a href=\"#\">Exames</a><span class=\"ds-nav-pin\" aria-hidden=\"true\"></span><a href=\"#\">Convênios</a><span class=\"ds-nav-pin\" aria-hidden=\"true\"></span><a href=\"#\">Como chegar</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 28px; padding: 16px 24px; background: var(--wine, #53090a); font-family: 'Source Serif 4', Georgia, serif; } .ds-nav a { color: var(--thread, #f8f3ed); font-size: 1.125rem; line-height: 1.2; text-decoration: none; text-decoration-thickness: 1px; text-underline-offset: 0.25em; } .ds-nav a:hover { text-decoration-line: underline; } .ds-nav a:focus-visible { outline: 2px solid var(--brass, #b08a3e); outline-offset: 3px; } .ds-nav-pin { width: 11px; height: 11px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass, #b08a3e) 55%, #6d5020); }"
+    },
+    {
+      "name": "Linha de exame",
+      "kind": "card",
+      "refersTo": "exam-row",
+      "description": "Nome, descrição e ação abertos por um fio com alfinete, sem cartão.",
+      "html": "<div class=\"ds-row\"><h3>Holter</h3><p>Aparelho portátil que registra o ritmo do coração durante a sua rotina.</p><a href=\"#\">Agendar</a></div>",
+      "css": ".ds-row { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) auto; align-items: baseline; gap: 12px 32px; padding: 32px 24px; border-top: 1px solid rgb(248 243 237 / 38%); background: var(--wine, #53090a); color: var(--thread, #f8f3ed); font-family: 'Source Serif 4', Georgia, serif; } .ds-row::before { content: ''; position: absolute; top: -6px; left: 0; width: 11px; height: 11px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e6c989, var(--brass, #b08a3e) 55%, #6d5020); } .ds-row h3 { margin: 0; font-size: 1.75rem; font-weight: 650; line-height: 1.15; } .ds-row p { margin: 0; font-size: 1.1875rem; line-height: 1.5; } .ds-row a { color: inherit; font-size: 1.125rem; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.3em; } .ds-row a:hover { text-decoration-thickness: 2px; text-underline-offset: 0.45em; } .ds-row a:focus-visible { outline: 2px solid var(--brass, #b08a3e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Faixa de renda",
+      "kind": "custom",
+      "refersTo": "doctor-band",
+      "description": "Campo claro de borda a borda, emoldurado por renda em imagem acima e abaixo.",
+      "html": "<div class=\"ds-band-stage\"><section class=\"ds-band\"><p class=\"ds-band-name\">Dr. La Hire dos Santos Prado Filho</p><p class=\"ds-band-crm\">CRM-SC 3211</p></section></div>",
+      "css": ".ds-band-stage { padding-block: 46px 60px; background: var(--wine, #53090a); } .ds-band { position: relative; padding: 48px 24px; background: var(--ribbon, #e7e0dc); color: var(--indigo, #142a64); font-family: 'Source Serif 4', Georgia, serif; } .ds-band::before, .ds-band::after { content: ''; position: absolute; left: 0; right: 0; pointer-events: none; background-repeat: repeat-x; } .ds-band::before { bottom: calc(100% - 2px); height: 30px; background-image: url('/assets/plates/lace-edge-top.png'); background-size: 606px 30px; } .ds-band::after { top: calc(100% - 2px); height: 42px; background-image: url('/assets/plates/lace-edge-bottom.png'); background-size: 1008px 42px; } .ds-band-name { margin: 0; font-size: 3rem; font-weight: 700; line-height: 1.02; letter-spacing: -0.02em; } .ds-band-crm { margin: 12px 0 0; font-size: 1.75rem; font-weight: 700; font-variant-numeric: tabular-nums lining-nums; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Almofada de Bilro",
+    "overview": "A página é a almofada da rendeira da Ilha de Santa Catarina: um pano vinho esticado, alfinetes de latão cravados nos pontos que importam e renda branca presa sobre o tecido. O paciente lê a longa experiência da clínica no ofício do material, não em promessa. O coração de renda é a peça em obra sobre a almofada, e a faixa de agendamento é a tira que atravessa o pano carregando os controles.\n\nA densidade é baixa e a leitura é direta. Títulos grandes em uma única serifa quente, listas separadas por fios finos, poucas informações por região e um caminho constante até o WhatsApp. A superfície é plana e têxtil: a profundidade vem da sobreposição de pano, renda e faixa, com uma única sombra reservada à barra flutuante do celular.\n\nO sistema recusa o site de clínica em azul e branco, a foto de banco de imagens e a grade de cartões com ícones. O índigo existe aqui como campo escuro de apoio e cor de tinta, sempre em diálogo com o vinho.",
+    "keyCharacteristics": [
+      "Pano vinho com trama visível cobrindo a página inteira.",
+      "Renda de bilro em imagem real nas bordas de cada faixa clara.",
+      "Alfinetes de latão como único ornamento recorrente.",
+      "Uma família tipográfica variável, com hierarquia por tamanho e peso.",
+      "Primeira tela composta como palco proporcional, conteúdo seguinte em fluxo fluido.",
+      "WhatsApp sempre ao alcance, em pílula índigo."
+    ],
+    "rules": [
+      {
+        "name": "The Pano Inteiro Rule",
+        "body": "O vinho com textura é o chão padrão de toda a página. Faixa clara e campo índigo interrompem o pano por região inteira, de borda a borda, e nunca viram blocos soltos dentro dele.",
+        "section": "colors"
+      },
+      {
+        "name": "The Par de Tinta Rule",
+        "body": "Cada campo tem uma tinta fixa: Fio Branco sobre vinho e índigo, Índigo de Tinta sobre a Faixa de Renda. Esses pares medem de 10,4:1 a 15,7:1.",
+        "section": "colors"
+      },
+      {
+        "name": "The Latão Escasso Rule",
+        "body": "Latão aparece só em alfinetes circulares e no contorno de foco. Nunca é cor de texto nem de campo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serifa Única Rule",
+        "body": "Source Serif 4 é a única família. Hierarquia nasce de tamanho, peso (400, 600, 650, 700 e 800) e cor de tinta.",
+        "section": "typography"
+      },
+      {
+        "name": "The Algarismos Alinhados Rule",
+        "body": "Telefones, CRM, CEP e números de endereço usam algarismos tabulares e alinhados (`tabular-nums lining-nums`).",
+        "section": "typography"
+      },
+      {
+        "name": "The Unidade de Palco Rule",
+        "body": "`--u` governa a primeira tela. O conteúdo em fluxo usa `clamp()` e só consulta `--u` para limitar títulos em telas largas.",
+        "section": "layout"
+      },
+      {
+        "name": "The Alvo Generoso Rule",
+        "body": "Links empilhados e de texto têm ao menos 44px de altura, e opções de exame e período têm ao menos 48px quando empilhadas.",
+        "section": "layout"
+      },
+      {
+        "name": "The Única Sombra Rule",
+        "body": "Só o que flutua sobre a rolagem projeta sombra. Faixas, linhas e campos ficam rentes ao pano.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Reto e Redondo Rule",
+        "body": "Não existe canto intermediário: campo é reto, alfinete é círculo, ação é pílula.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** manter o Vinho de Almofada com a textura de pano como chão de toda página nova.",
+      "**Do** emoldurar toda faixa clara com as imagens de renda, acima e abaixo.",
+      "**Do** usar Fio Branco sobre vinho e índigo, e Índigo de Tinta sobre a Faixa de Renda.",
+      "**Do** usar contorno de foco de 2px em latão sobre vinho e índigo, e em índigo sobre a Faixa de Renda.",
+      "**Do** construir a primeira tela composta com `--u` e o conteúdo em fluxo com `clamp()`.",
+      "**Do** aplicar `tabular-nums lining-nums` a telefones, registros e números de endereço.",
+      "**Do** levar toda ação de agendamento ao WhatsApp, com a mensagem já preenchida.",
+      "**Do** condicionar qualquer movimento a `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** usar o layout de clínica em azul e branco, foto de banco de imagens ou cartões com ícones.",
+      "**Don't** usar latão em texto, em campo ou como contorno de foco sobre a Faixa de Renda, onde mede 2,46:1.",
+      "**Don't** introduzir uma segunda família tipográfica.",
+      "**Don't** substituir a renda em imagem por borda, ondulação ou traço desenhados em CSS.",
+      "**Don't** projetar sombra em faixas, seções ou linhas; a sombra pertence à barra flutuante.",
+      "**Don't** criar cantos intermediários em campos: campo é reto, alfinete é círculo, ação é pílula."
+    ]
+  }
+}

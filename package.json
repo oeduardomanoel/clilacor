@@ -1,0 +1,17 @@
+{
+  "name": "clilacor-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "sync:plates": "node scripts/sync-plates.mjs",
+    "predev": "node scripts/sync-plates.mjs",
+    "prebuild": "node scripts/sync-plates.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.4.12"
+  }
+}
